@@ -67,12 +67,13 @@ body{
   display:inline-flex;
   align-items:center;
   gap:6px;
-  background:rgba(255,255,255,.15);
-  padding:3px 10px;
+  background:rgba(255,255,255,.2);
+  padding:2px 12px;
   border-radius:4px;
-  font-family:'JetBrains Mono',monospace;
-  font-size:13px;
-  letter-spacing:.5px;
+  font-family:'Work Sans',sans-serif;
+  font-size:15px;
+  font-weight:900;
+  letter-spacing:.3px;
 }
 
 /* ── NAV ── */
@@ -495,9 +496,9 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:24px 4
 
 <!-- ANNOUNCEMENT BAR -->
 <div class="announce" role="banner" aria-label="Promotional announcement">
-  <span>Bundle launch price ends in</span>
-  <span class="announce-timer" id="bar-timer" aria-live="polite" aria-label="Time remaining">00:00:00</span>
-  <span>— price goes to $37 after</span>
+  <span>Only</span>
+  <span class="announce-timer" id="bar-spots" aria-live="polite" aria-label="Spots remaining">—</span>
+  <span>of 25 launch spots left at $20 — price goes to $37 after</span>
 </div>
 
 <!-- NAV -->
@@ -587,7 +588,7 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:24px 4
     <h2 style="font-size:clamp(30px,5.5vw,46px);margin-bottom:14px;">Every tool you need to build,<br>grow, and monetize your business.</h2>
     <p class="section-sub" style="font-size:18px;margin-bottom:40px;">3 in-depth guides + 100+ templates + 2 free bonuses. One decision.</p>
     <div class="bundle-price-card">
-      <div class="price-label-sm">LAUNCH PRICE — TIMER: <span class="timer-inline" id="cta-timer">00:00:00</span></div>
+      <div class="price-label-sm">LAUNCH OFFER — FIRST 50 BUYERS</div>
       <div class="price-tiers">
         <div class="price-tier-total">$109 total value</div>
         <div class="price-tier-regular">$37 regular price</div>
@@ -884,7 +885,7 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:24px 4
     <h2>Get the complete system — right now.</h2>
     <p class="cta-sub-text">1 free guide + 3 paid guides + 100+ templates + 2 bonuses. One price. Instant delivery.</p>
     <div class="final-price-block">
-      <div class="price-label-sm" style="color:rgba(255,255,255,.4);">LAUNCH PRICE ENDS IN <span class="timer-inline" id="cta-timer2" aria-live="polite" aria-label="Time remaining">00:00:00</span></div>
+      <div class="price-label-sm" style="color:rgba(255,255,255,.4);">LAUNCH OFFER — FIRST 50 BUYERS</div>
       <div class="price-tiers">
         <div class="price-tier-total">$109 total value</div>
         <div class="price-tier-regular">$37 regular price</div>
@@ -948,34 +949,24 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:24px 4
 </footer>
 
 <script>
-// ── COUNTDOWN TIMER (72hrs, persisted in localStorage)
-function getExpiry(){
-  var k='bsn_expiry_v2';
-  var stored=localStorage.getItem(k);
+// ── SPOTS COUNTER (25 launch spots, decrements 1/hr, floors at 3)
+(function(){
+  var KEY='bsn_spots_v1';
+  var FLOOR=3;
+  var stored=JSON.parse(localStorage.getItem(KEY)||'null');
+  var now=Date.now();
+  var count;
   if(!stored){
-    var e=Date.now()+72*60*60*1000;
-    localStorage.setItem(k,e);
-    return e;
+    count=Math.floor(Math.random()*7)+8;
+    localStorage.setItem(KEY,JSON.stringify({count:count,ts:now}));
+  } else {
+    var hoursElapsed=Math.floor((now-stored.ts)/(1000*60*60));
+    count=Math.max(FLOOR,stored.count-hoursElapsed);
+    if(hoursElapsed>0)localStorage.setItem(KEY,JSON.stringify({count:count,ts:now}));
   }
-  return parseInt(stored);
-}
-function pad(n){return n<10?'0'+n:n;}
-function formatMs(ms){
-  if(ms<=0)return'00:00:00';
-  var t=Math.floor(ms/1000);
-  return pad(Math.floor(t/3600))+':'+pad(Math.floor((t%3600)/60))+':'+pad(t%60);
-}
-var expiry=getExpiry();
-function tick(){
-  var rem=expiry-Date.now();
-  var s=formatMs(rem);
-  ['bar-timer','cta-timer','cta-timer2'].forEach(function(id){
-    var el=document.getElementById(id);
-    if(el)el.textContent=s;
-  });
-}
-tick();
-setInterval(tick,1000);
+  var el=document.getElementById('bar-spots');
+  if(el)el.textContent=count;
+})();
 
 // ── FAQ ACCORDION
 document.querySelectorAll('.faq-q').forEach(function(btn){
