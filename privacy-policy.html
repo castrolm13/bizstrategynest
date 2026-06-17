@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — BizStrategyNest</title>
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAGDklEQVR4nO2YfWxUVRbAz7n3vjfTKdMplBZpoRSL2sUQP0ACNjqAurLCrlEylQSDidkA8eOPzfqdmGGIu8Y//EP917hB3Q+YbQRUDOsibTC7ZBehkcXAUlYgpdsvW5h23sx77957zHsjCbrZaDYzXar3989LXu695557zj0fF8BgMBgMBgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8IYfCJUKIQAAAABJRU5ErkJggg==">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800;900&family=Lora:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+
+.skip-link{
+  position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;
+  background:var(--purple);color:#fff;padding:8px 16px;font-size:14px;font-weight:700;
+  border-radius:0 0 6px 6px;z-index:9999;text-decoration:none;
+}
+.skip-link:focus{position:fixed;left:50%;transform:translateX(-50%);top:0;width:auto;height:auto;overflow:visible;}
+
+:root{
+  --ink:#0D0D0F;
+  --bg:#F7F5F0;
+  --cream:#FAF8F3;
+  --purple:#4F35E3;
+  --purple-light:#EDE9FF;
+  --purple-mid:#7B65EC;
+  --gold:#E8B84B;
+  --border:#E2DED6;
+  --muted:#8A8680;
+  --white:#FFFFFF;
+  --green:#1D7A45;
+  --green-light:#EDFAF4;
+}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Work Sans',sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.6;
+  overflow-x:hidden;
+}
+
+/* ── ANNOUNCEMENT BAR ── */
+.announce{
+  background:var(--purple);
+  color:#fff;
+  text-align:center;
+  padding:10px 20px;
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:.3px;
+  position:sticky;
+  top:0;
+  z-index:100;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  flex-wrap:wrap;
+}
+.announce-timer{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  background:rgba(255,255,255,.2);
+  padding:2px 12px;
+  border-radius:4px;
+  font-family:'Work Sans',sans-serif;
+  font-size:15px;
+  font-weight:900;
+  letter-spacing:.3px;
+}
+
+/* ── NAV ── */
+.nav-wrap{background:var(--cream);border-bottom:1px solid var(--border);}
+nav{
+  max-width:860px;
+  margin:0 auto;
+  padding:14px 24px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.logo{display:flex;align-items:center;gap:10px;}
+.logo-text{font-family:'Work Sans',sans-serif;font-weight:800;font-size:14px;letter-spacing:.8px;color:var(--purple);}
+.nav-cta{
+  background:var(--purple);color:#fff;border:none;border-radius:6px;
+  padding:10px 20px;font-family:'Work Sans',sans-serif;font-weight:700;
+  font-size:13px;cursor:pointer;letter-spacing:.3px;text-decoration:none;
+  min-height:44px;display:inline-flex;align-items:center;
+  touch-action:manipulation;
+}
+.nav-cta:focus-visible{outline:2px solid var(--gold);outline-offset:3px;}
+
+/* ── LAYOUT ── */
+.wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+
+/* ── LEGAL HERO ── */
+.legal-hero{
+  background:var(--ink);
+  padding:52px 24px 44px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.legal-hero::before{
+  content:'';position:absolute;top:-80px;right:-60px;
+  width:260px;height:260px;border-radius:50%;
+  background:var(--purple);opacity:.07;
+}
+.legal-hero::after{
+  content:'';position:absolute;bottom:-40px;left:-30px;
+  width:160px;height:160px;border-radius:50%;
+  background:var(--gold);opacity:.06;
+}
+.legal-inner{max-width:680px;margin:0 auto;position:relative;z-index:1;}
+.back-link{
+  display:inline-flex;align-items:center;gap:6px;
+  color:rgba(255,255,255,.5);text-decoration:none;
+  font-size:13px;font-weight:600;letter-spacing:.3px;
+  margin-bottom:24px;transition:color .2s;
+}
+.back-link:hover{color:var(--gold);}
+.back-link:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px;}
+.legal-badge{
+  display:inline-block;background:var(--purple);color:#fff;
+  font-size:10px;font-weight:800;letter-spacing:1.5px;
+  padding:4px 14px;border-radius:3px;margin-bottom:16px;
+  text-transform:uppercase;
+}
+.legal-hero h1{
+  font-family:'Work Sans',sans-serif;font-weight:900;
+  font-size:clamp(26px,5vw,42px);line-height:1.1;
+  color:#fff;margin-bottom:10px;letter-spacing:-1px;
+}
+.legal-date{
+  font-family:'Lora',serif;font-style:italic;
+  font-size:14px;color:rgba(255,255,255,.45);
+}
+
+/* ── LEGAL BODY ── */
+.legal-body{padding:52px 0 72px;background:var(--bg);}
+.legal-section{margin-bottom:36px;}
+.legal-section h2{
+  font-family:'Work Sans',sans-serif;font-weight:800;
+  font-size:15px;color:var(--purple);margin-bottom:10px;
+  letter-spacing:.2px;
+}
+.legal-section p{
+  font-size:14px;color:#444;line-height:1.72;margin-bottom:10px;
+}
+.legal-section ul{margin:8px 0 10px 22px;list-style:disc;}
+.legal-section ul li{
+  font-size:14px;color:#444;line-height:1.65;padding:3px 0;
+}
+.legal-divider{height:1px;background:var(--border);margin:32px 0;}
+.legal-contact-box{
+  background:var(--ink);border-radius:12px;padding:24px 28px;margin-top:8px;
+}
+.legal-contact-box p{color:rgba(255,255,255,.65);font-size:14px;line-height:1.65;}
+.legal-contact-box a{color:var(--gold);text-decoration:none;}
+.legal-contact-box a:hover{text-decoration:underline;}
+.legal-intro{
+  background:#fff;border:1px solid var(--border);border-radius:12px;
+  padding:20px 24px;margin-bottom:36px;
+  font-size:14px;color:#555;line-height:1.7;
+}
+
+/* ── FOOTER ── */
+footer{background:var(--cream);border-top:1px solid var(--border);padding:24px 40px;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--muted);flex-wrap:wrap;gap:10px;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:620px){
+  nav{padding:12px 20px;}
+  .legal-hero{padding:40px 20px 36px;}
+  footer{flex-direction:column;text-align:center;}
+}
+
+/* ── REDUCED MOTION ── */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;}
+  html{scroll-behavior:auto;}
+}
+</style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="announce" role="banner" aria-label="Promotional announcement">
+  <span>Only</span>
+  <span class="announce-timer" id="bar-spots" aria-live="polite" aria-label="Spots remaining">—</span>
+  <span>of 25 launch spots left at $20 — price goes to $37 after</span>
+</div>
+
+<!-- NAV -->
+<div class="nav-wrap">
+  <nav aria-label="Main navigation">
+    <div class="logo">
+      <img src="data:image/png;base64,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" alt="BizStrategyNest" style="width:52px;height:52px;object-fit:contain;"/>
+      <span class="logo-text">BIZSTRATEGYNEST</span>
+    </div>
+    <a href="index.html#bundle" class="nav-cta">Get the Bundle — $20</a>
+  </nav>
+</div>
+
+<main id="main-content" tabindex="-1">
+
+  <!-- LEGAL HERO -->
+  <div class="legal-hero">
+    <div class="legal-inner">
+      <a href="index.html" class="back-link">← Back to Home</a>
+      <div class="legal-badge">BizStrategyNest</div>
+      <h1>Privacy Policy</h1>
+      <p class="legal-date">Last updated: June 17, 2025</p>
+    </div>
+  </div>
+
+  <!-- LEGAL BODY -->
+  <div class="legal-body">
+    <div class="wrap">
+
+      <div class="legal-intro">
+        BizStrategyNest ("we," "us," or "our") operates the website bizstrategynest.com and associated sales pages hosted on third-party platforms including Systeme.io, Hotmart, and Gumroad. Our contact email is <a href="mailto:hello@bizstrategynest.com" style="color:var(--purple);">hello@bizstrategynest.com</a>.
+      </div>
+
+      <div class="legal-section">
+        <h2>1. Who We Are</h2>
+        <p>BizStrategyNest operates bizstrategynest.com and all associated sales pages and digital product delivery platforms. We are committed to protecting your personal data and your right to privacy.</p>
+      </div>
+
+      <div class="legal-divider"></div>
+
+      <div class="legal-section">
+        <h2>2. What Data We Collect</h2>
+        <p>We collect only the information necessary to deliver our products and communicate with you:</p>
+        <ul>
+          <li><strong>First name and email address</strong> — collected when you opt in to receive our free lead magnet or purchase a product.</li>
+          <li><strong>Payment information</strong> — processed directly by third-party payment processors (Systeme.io, Hotmart, Gumroad, Stripe). We do not store your payment card details.</li>
+          <li><strong>Usage data</strong> — basic analytics such as page views and click behavior, collected automatically through our platforms and any analytics tools we use (e.g., Google Analytics).</li>
+        </ul>
+      </div>
+
+      <div class="legal-divider"></div>
+
+      <div class="legal-section">
+        <h2>3. How We Use Your Data</h2>
+        <ul>
+          <li>To deliver the free lead magnet (Lead Generation Mastery ebook) you requested.</li>
+          <li>To deliver paid products you purchased (The Complete Business Growth Bundle).</li>
+          <li>To send you follow-up emails, promotional offers, and business content. You can unsubscribe at any time using the link at the bottom of any email.</li>
+          <li>To improve our website and marketing based on aggregated usage data.</li>
+        </ul>
+        <p>We do not sell, rent, or trade your personal data to third parties.</p>
+      </div>
+
+      <div class="legal-divider"></div>
+
+      <div class="legal-section">
+        <h2>4. Third-Party Platforms</h2>
+        <p>Your data may be processed by the following third-party platforms as part of our operations:</p>
+        <ul>
+          <li><strong>Systeme.io</strong> — funnel hosting, email automation, and checkout.</li>
+          <li><strong>Hotmart</strong> — digital product delivery and payment processing.</li>
+          <li><strong>Gumroad</strong> — digital product delivery and payment processing.</li>
+          <li><strong>Google Analytics</strong> — anonymous website traffic analysis.</li>
+        </ul>
+        <p>Each platform operates under its own privacy policy. We recommend reviewing their policies for details on how they handle your data.</p>
+      </div>
+
+      <div class="legal-divider"></div>
+
+      <div class="legal-section">
+        <h2>5. Cookies</h2>
+        <p>Our sales pages and website may use cookies and similar tracking technologies for analytics and marketing purposes. By continuing to use our site, you consent to the use of cookies. You may disable cookies through your browser settings, though this may affect site functionality.</p>
+      </div>
+
+      <div class="legal-divider"></div>
+
+      <div class="legal-section">
+        <h2>6. Your Rights</h2>
+        <p>Regardless of your location, you have the right to:</p>
+        <ul>
+          <li>Request access to the personal data we hold about you.</li>
+          <li>Request correction of inaccurate data.</li>
+          <li>Request deletion of your data (right to be forgotten).</li>
+          <li>Unsubscribe from our email list at any time.</li>
+        </ul>
+        <p>To exercise any of these rights, contact us at <a href="mailto:hello@bizstrategynest.com" style="color:var(--purple);">hello@bizstrategynest.com</a>.</p>
+      </div>
+
+      <div class="legal-divider"></div>
+
+      <div class="legal-section">
+        <h2>7. Data Retention</h2>
+        <p>We retain your email and name for as long as you are subscribed to our list or have an active purchase relationship with us. If you unsubscribe and request deletion, we will remove your data within 30 days.</p>
+      </div>
+
+      <div class="legal-divider"></div>
+
+      <div class="legal-section">
+        <h2>8. International Buyers</h2>
+        <p>We serve customers globally, including in the United States, Latin America, and the European Union. If you are located in the EU, you have additional rights under the General Data Protection Regulation (GDPR). Users in the EU may contact us to exercise their GDPR rights. While we are not an EU-based company, we are committed to handling EU data responsibly.</p>
+      </div>
+
+      <div class="legal-divider"></div>
+
+      <div class="legal-section">
+        <h2>9. Children's Privacy</h2>
+        <p>Our products are intended for adults aged 18 and older. We do not knowingly collect personal data from anyone under 18.</p>
+      </div>
+
+      <div class="legal-divider"></div>
+
+      <div class="legal-section">
+        <h2>10. Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time. The most current version will always be available at bizstrategynest.com. Continued use of our products or services after any changes constitutes your acceptance of the updated policy.</p>
+      </div>
+
+      <div class="legal-divider"></div>
+
+      <div class="legal-section">
+        <h2>11. Contact</h2>
+        <div class="legal-contact-box">
+          <p>For any privacy-related questions or requests, reach us at:<br><br>
+          <a href="mailto:hello@bizstrategynest.com">hello@bizstrategynest.com</a></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer role="contentinfo">
+  <div class="logo">
+    <img src="data:image/png;base64,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" alt="BizStrategyNest" style="width:52px;height:52px;object-fit:contain;"/>
+    <span style="font-weight:700;font-size:12px;color:var(--purple);letter-spacing:.5px;">BIZSTRATEGYNEST</span>
+  </div>
+  <span>© 2025 BizStrategyNest · bizstrategynest.com</span>
+  <span><a href="privacy-policy.html" style="color:var(--muted);text-decoration:none;">Privacy</a> · <a href="terms-of-service.html" style="color:var(--muted);text-decoration:none;">Terms</a> · <a href="eula.html" style="color:var(--muted);text-decoration:none;">EULA</a> · <a href="mailto:hello@bizstrategynest.com" style="color:var(--muted);text-decoration:none;">Support</a></span>
+</footer>
+
+<script>
+(function(){
+  var KEY='bsn_spots_v1';
+  var FLOOR=3;
+  var stored=JSON.parse(localStorage.getItem(KEY)||'null');
+  var now=Date.now();
+  var count;
+  if(!stored){
+    count=Math.floor(Math.random()*7)+8;
+    localStorage.setItem(KEY,JSON.stringify({count:count,ts:now}));
+  } else {
+    var hoursElapsed=Math.floor((now-stored.ts)/(1000*60*60));
+    count=Math.max(FLOOR,stored.count-hoursElapsed);
+    if(hoursElapsed>0)localStorage.setItem(KEY,JSON.stringify({count:count,ts:now}));
+  }
+  var el=document.getElementById('bar-spots');
+  if(el)el.textContent=count;
+})();
+</script>
+</body>
+</html>
