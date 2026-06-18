@@ -105,8 +105,7 @@ nav{
 ══════════════════════════════════════ */
 .free-hero{
   background:var(--ink);
-  padding:64px 24px 56px;
-  text-align:center;
+  padding:52px 24px;
   position:relative;
   overflow:hidden;
 }
@@ -120,43 +119,52 @@ nav{
   width:200px;height:200px;border-radius:50%;
   background:var(--gold);opacity:.06;
 }
-.free-inner{max-width:680px;margin:0 auto;position:relative;z-index:1;}
+.free-inner{
+  max-width:760px;margin:0 auto;position:relative;z-index:1;
+  display:flex;align-items:center;gap:52px;
+}
+.free-hero-visual{
+  flex-shrink:0;
+  display:flex;flex-direction:column;align-items:center;
+}
+.free-hero-content{flex:1;min-width:0;}
 
 .free-badge{
   display:inline-block;
   background:var(--green);
   color:#fff;
   font-size:11px;font-weight:800;letter-spacing:1.5px;
-  padding:5px 16px;border-radius:3px;margin-bottom:20px;
+  padding:5px 16px;border-radius:3px;margin-bottom:16px;
   text-transform:uppercase;
 }
 .free-hero h1{
   font-family:'Work Sans',sans-serif;font-weight:900;
-  font-size:clamp(28px,5vw,48px);line-height:1.1;
-  color:#fff;margin-bottom:14px;letter-spacing:-1px;
+  font-size:clamp(26px,4vw,40px);line-height:1.1;
+  color:#fff;margin-bottom:12px;letter-spacing:-1px;
 }
 .free-hero h1 em{font-style:normal;color:var(--gold);}
 .free-hero-sub{
   font-family:'Lora',serif;font-style:italic;
-  font-size:clamp(15px,2.5vw,18px);
+  font-size:clamp(14px,2vw,16px);
   color:rgba(255,255,255,.6);
-  max-width:500px;margin:0 auto 32px;line-height:1.65;
+  margin-bottom:24px;line-height:1.65;
 }
 
 /* Book cover image */
 .book-mockup{
-  display:inline-block;margin:0 auto 32px;
+  display:inline-block;
   position:relative;
+  margin-bottom:14px;
 }
 .book-mockup::before{
-  content:'';position:absolute;inset:-20px;
-  background:radial-gradient(ellipse at center,rgba(79,53,227,.25) 0%,transparent 70%);
+  content:'';position:absolute;inset:-24px;
+  background:radial-gradient(ellipse at center,rgba(79,53,227,.3) 0%,transparent 70%);
   border-radius:50%;pointer-events:none;z-index:0;
 }
 .book-cover-img{
   display:block;position:relative;z-index:1;
-  width:180px;height:auto;
-  border-radius:3px 10px 10px 3px;
+  width:160px;height:auto;
+  border-radius:3px 8px 8px 3px;
   box-shadow:
     -5px 0 0 #2a1f8a,
     -8px 2px 10px rgba(0,0,0,.5),
@@ -174,15 +182,15 @@ nav{
     0 0 0 1px rgba(255,255,255,.08);
 }
 .book-meta{
-  display:flex;gap:14px;justify-content:center;margin-bottom:24px;
+  display:flex;gap:10px;justify-content:center;flex-wrap:wrap;
 }
 .book-meta-item{
-  font-size:11px;font-weight:700;color:rgba(255,255,255,.45);
+  font-size:10px;font-weight:700;color:rgba(255,255,255,.4);
   letter-spacing:.5px;text-transform:uppercase;
-  display:flex;align-items:center;gap:5px;
+  display:flex;align-items:center;gap:4px;
 }
 .book-meta-item::before{
-  content:'';width:4px;height:4px;border-radius:50%;
+  content:'';width:3px;height:3px;border-radius:50%;
   background:var(--purple);flex-shrink:0;
 }
 
@@ -191,9 +199,7 @@ nav{
   background:rgba(255,255,255,.06);
   border:1px solid rgba(255,255,255,.12);
   border-radius:14px;
-  padding:28px 32px;
-  max-width:420px;
-  margin:0 auto;
+  padding:20px 24px;
 }
 .optin-label{
   font-size:12px;font-weight:700;color:rgba(255,255,255,.65);
@@ -225,7 +231,7 @@ nav{
   display:flex;align-items:center;justify-content:center;gap:5px;
 }
 .free-bullets{
-  display:flex;justify-content:center;gap:20px;margin-top:20px;flex-wrap:wrap;
+  display:flex;justify-content:flex-start;gap:16px;margin-top:16px;flex-wrap:wrap;
 }
 .free-bullet{
   font-size:12px;color:rgba(255,255,255,.5);
@@ -462,8 +468,11 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:24px 4
 /* RESPONSIVE — mobile */
 @media(max-width:620px){
   nav{padding:12px 20px;}
-  .free-hero{padding:48px 20px 40px;}
-  .optin-box{padding:22px 20px;}
+  .free-hero{padding:40px 20px 36px;}
+  .free-inner{flex-direction:column;gap:28px;text-align:center;}
+  .free-hero-content{text-align:center;}
+  .free-bullets{justify-content:center;}
+  .optin-box{padding:18px 16px;}
   .problem-grid,.for-grid,.testi-grid{grid-template-columns:1fr;}
   .product-item{grid-template-columns:72px 1fr;gap:14px;}
   .guarantee-box{grid-template-columns:1fr;text-align:center;}
@@ -476,12 +485,13 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:24px 4
 
 /* ANIMATIONS */
 @keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
-.free-inner>*{animation:fadeUp .5s ease both;}
-.free-inner>*:nth-child(1){animation-delay:.05s;}
-.free-inner>*:nth-child(2){animation-delay:.12s;}
-.free-inner>*:nth-child(3){animation-delay:.2s;}
-.free-inner>*:nth-child(4){animation-delay:.3s;}
-.free-inner>*:nth-child(5){animation-delay:.38s;}
+.free-hero-visual{animation:fadeUp .5s .05s ease both;}
+.free-hero-content>*{animation:fadeUp .5s ease both;}
+.free-hero-content>*:nth-child(1){animation-delay:.12s;}
+.free-hero-content>*:nth-child(2){animation-delay:.2s;}
+.free-hero-content>*:nth-child(3){animation-delay:.28s;}
+.free-hero-content>*:nth-child(4){animation-delay:.36s;}
+.free-hero-content>*:nth-child(5){animation-delay:.44s;}
 
 /* REDUCED MOTION */
 @media(prefers-reduced-motion:reduce){
@@ -519,36 +529,39 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:24px 4
 <div class="free-hero">
   <div class="free-inner">
 
-    <div class="free-badge">100% Free — Instant Download</div>
-
-    <div class="book-mockup">
-      <img
-        src="lead-gen-mastery-cover.png"
-        alt="Lead Generation Mastery — Free Guide by BizStrategyNest: Build and Scale Your Funnel From the Ground Up"
-        class="book-cover-img"
-        width="180"
-        height="240"
-        loading="eager"
-      />
+    <!-- Left: book cover -->
+    <div class="free-hero-visual">
+      <div class="book-mockup">
+        <img
+          src="lead-gen-mastery-cover.png"
+          alt="Lead Generation Mastery — Free Guide by BizStrategyNest: Build and Scale Your Funnel From the Ground Up"
+          class="book-cover-img"
+          width="160"
+          height="214"
+          loading="eager"
+        />
+      </div>
+      <div class="book-meta">
+        <span class="book-meta-item">12 Chapters</span>
+        <span class="book-meta-item">28 Pages</span>
+        <span class="book-meta-item">PDF</span>
+      </div>
     </div>
 
-    <div class="book-meta">
-      <span class="book-meta-item">12 Chapters</span>
-      <span class="book-meta-item">28 Pages</span>
-      <span class="book-meta-item">PDF Download</span>
-    </div>
-    <h1>Start here.<br>Get <em>Lead Generation Mastery</em><br>completely free.</h1>
-    <p class="free-hero-sub">The step-by-step guide to building a funnel that attracts the right leads, captures their email, and turns them into buyers — starting from zero.</p>
-
-    <div class="optin-box">
-      <a class="btn-free" href="https://www.bizstrategynest.store/opt-in">Send Me the Free Guide →</a>
-    </div>
-
-    <div class="free-bullets">
-      <span class="free-bullet"><span class="free-bullet-dot"></span>Covers TOFU → BOFU</span>
-      <span class="free-bullet"><span class="free-bullet-dot"></span>Instant delivery</span>
-      <span class="free-bullet"><span class="free-bullet-dot"></span>No credit card</span>
-      <span class="free-bullet"><span class="free-bullet-dot"></span>100% free</span>
+    <!-- Right: text + CTA -->
+    <div class="free-hero-content">
+      <div class="free-badge">100% Free — Instant Download</div>
+      <h1>Start here.<br>Get <em>Lead Generation Mastery</em><br>completely free.</h1>
+      <p class="free-hero-sub">The step-by-step guide to building a funnel that attracts the right leads, captures their email, and turns them into buyers — starting from zero.</p>
+      <div class="optin-box">
+        <a class="btn-free" href="https://www.bizstrategynest.store/opt-in">Send Me the Free Guide →</a>
+      </div>
+      <div class="free-bullets">
+        <span class="free-bullet"><span class="free-bullet-dot"></span>Covers TOFU → BOFU</span>
+        <span class="free-bullet"><span class="free-bullet-dot"></span>Instant delivery</span>
+        <span class="free-bullet"><span class="free-bullet-dot"></span>No credit card</span>
+        <span class="free-bullet"><span class="free-bullet-dot"></span>100% free</span>
+      </div>
     </div>
 
   </div>
