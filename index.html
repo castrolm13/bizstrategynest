@@ -506,9 +506,7 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:24px 4
 
 <!-- ANNOUNCEMENT BAR -->
 <div class="announce" role="banner" aria-label="Promotional announcement">
-  <span>Only</span>
-  <span class="announce-timer" id="bar-spots" aria-live="polite" aria-label="Spots remaining">—</span>
-  <span>of 25 launch spots left at $20 — price goes to $37 after</span>
+  <span>Only 25 launch spots left at $20 — price goes to $37 after</span>
 </div>
 
 <!-- NAV -->
@@ -953,24 +951,6 @@ footer{background:var(--cream);border-top:1px solid var(--border);padding:24px 4
 </footer>
 
 <script>
-// ── SPOTS COUNTER (25 launch spots, decrements 1/hr, floors at 3)
-(function(){
-  var KEY='bsn_spots_v1';
-  var FLOOR=3;
-  var stored=JSON.parse(localStorage.getItem(KEY)||'null');
-  var now=Date.now();
-  var count;
-  if(!stored){
-    count=Math.floor(Math.random()*7)+8;
-    localStorage.setItem(KEY,JSON.stringify({count:count,ts:now}));
-  } else {
-    var hoursElapsed=Math.floor((now-stored.ts)/(1000*60*60));
-    count=Math.max(FLOOR,stored.count-hoursElapsed);
-    if(hoursElapsed>0)localStorage.setItem(KEY,JSON.stringify({count:count,ts:now}));
-  }
-  var el=document.getElementById('bar-spots');
-  if(el)el.textContent=count;
-})();
 
 // ── FAQ ACCORDION
 document.querySelectorAll('.faq-q').forEach(function(btn){
